@@ -71,3 +71,17 @@ function calculo(){
 
     operRealizada.innerHTML = parcial;
 }
+
+function verificarContrasena(event) {
+    event.preventDefault();
+    const contrasenaIngresada = document.getElementById('contrasena').value;
+
+    // Aquí verifica la contraseña ingresada con la contraseña correcta
+    const contrasenaCorrecta = 'pepe';
+
+    if (contrasenaIngresada === contrasenaCorrecta) {
+        window.location.href = 'calculadora.html'; // Redireccionar al contenido si la contraseña es correcta
+    } else {
+        alert('Contraseña incorrecta. Inténtalo de nuevo.'); // Mostrar un mensaje de error si la contraseña es incorrecta
+    }
+}
