@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Calculadora</title>
-    <link rel="stylesheet" href="estilo.css">
-    <link rel="icon" href="favicon-16x16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Acceso</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div id="operacionRealizada">0</div>
-        <div id="txtResultado"></div>
-        <div class ="fila">
-            <button class="tecla" onclick="operador('1')">1</button>
-            <button class="tecla" onclick="operador('2')">2</button>
-            <button class="tecla" onclick="operador('3')">3</button>
-            <button class="tecla" onclick="operacion('*')">*</button>
-        </div>
-        <div class ="fila">
-            <button class="tecla" onclick="operador('4')">4</button>
-            <button class="tecla" onclick="operador('5')">5</button>
-            <button class="tecla" onclick="operador('6')">6</button>
-            <button class="tecla" onclick="operacion('-')">-</button>
-        </div>
-        <div class ="fila">
-            <button class="tecla" onclick="operador('7')">7</button>
-            <button class="tecla" onclick="operador('8')">8</button>
-            <button class="tecla" onclick="operador('9')">9</button>
-            <button class="tecla" onclick="operacion('+')">+</button>
-        </div>
-        <div class ="fila">
-            <button class="tecla" onclick="limpiar()">AC</button>
-            <button class="tecla" onclick="operador('0')">0</button>
-            <button class="tecla" onclick="calculo()">=</button>
-            <button class="tecla" onclick="operacion('/')">/</button>
-        </div>
-    </div>
-    <script src="main.js"></script>
+<div class="container">
+  <h1>Bienvenido al Portal</h1>
+  <form onsubmit="verificarContrasena(event)">
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" required>
+    <button type="submit">Acceder</button>
+  </form>
+</div>
+<script>
+  function verificarContrasena(event) {
+    event.preventDefault();
+    const contrasenaIngresada = document.getElementById('contrasena').value;
+
+    // Aquí verifica la contraseña ingresada con la contraseña correcta
+    const contrasenaCorrecta = 'pepe';
+
+    if (contrasenaIngresada === contrasenaCorrecta) {
+      window.location.href = 'calculadora.html'; // Redireccionar al contenido si la contraseña es correcta
+    } else {
+      alert('Contraseña incorrecta. Inténtalo de nuevo.'); // Mostrar un mensaje de error si la contraseña es incorrecta
+    }
+  }
+</script>
 
 </body>
 </html>

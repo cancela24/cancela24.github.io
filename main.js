@@ -1,18 +1,18 @@
-//contiene la operación o resultado parcial
+
 let parcial = "";
 
-//elementos donde se colcan las operacion que se esta realizando
+
 let operRealizada = document.getElementById("operacionRealizada");
-//elemento donde se colocará el resultado
+
 let txtResul = document.getElementById("txtResultado");
 
-//ultimo operador seleccionado
+
 let operadorSeleccionado = "";
 
-//numero ingresado
+
 let numero = "";
 
-//para determinar si lo ultimo ingresado fue un número o un operador
+
 let ultimoDigitoPresionado = "";
 
 
@@ -60,8 +60,7 @@ function limpiar(){
 
 //Función que realiza el calculo de parcial
 function calculo(){
-    //con eval evaluo la operacion que esta en string.
-    //asi obtengo un resultado numerico
+    //eval es funcion que devuelve el calculo de un string
     parcial = eval(parcial);
     //muestro el resultado
     txtResul.innerHTML = parcial;
